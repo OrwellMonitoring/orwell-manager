@@ -2,7 +2,7 @@
 <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
     <div class="container flex-wrap mx-auto px-2 pt-8 lg:pt-16">
         <h1 class="flex items-center font-black text-white px-2 mt-12 text-4xl">
-            Hosts
+            Collectors
         </h1>
         <div class="py-4">
             <div class="w-full border-2 border-maingrey"></div>
@@ -17,27 +17,33 @@
                             <thead class="text-white bg-mainorange">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
-                                        Hostname
+                                        Name
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        IP Address
+                                        Target
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        State
+                                        Port
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Type
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-maingray text-white" *ngFor="let host of hosts">
+                            <tbody class="bg-maingray text-white" *ngFor="let collector of collectors">
                                 <tr class="border-b">
                                     <td class="px-6 py-4">
-                                        {{ host.hostname }}
+                                        {{ collector.name }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ host.ip }}
+                                        {{ collector.target }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        <span *ngIf="host.state_id == 1">Active</span>
-                                        <span *ngIf="host.state_id != 1">Inactive</span>
+                                        {{ collector.port }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span *ngIf="collector.type_id == 1">Push</span>
+                                        <span *ngIf="collector.type_id == 2">Pull</span>
                                     </td>
                                 </tr>
                             </tbody>
