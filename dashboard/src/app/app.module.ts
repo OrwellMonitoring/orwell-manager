@@ -13,6 +13,7 @@ import { ImagesComponent } from './pages/images/images.component';
 import { RouterModule } from '@angular/router';
 import { ImageService } from './services/image.service';
 import { AddimageComponent } from './components/addimage/addimage.component';
+import { HostsComponent } from './pages/hosts/hosts.component';
 
 
 const appRoutes = [
@@ -24,7 +25,8 @@ const appRoutes = [
     AppComponent,
     SidenavComponent,
     ImagesComponent,
-    AddimageComponent
+    AddimageComponent,
+    HostsComponent
   ],
   imports: [
     BrowserModule,
