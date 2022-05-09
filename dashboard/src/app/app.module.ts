@@ -10,15 +10,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SidenavComponent } from './components/sidenav/sidenav.component'
 import { ImagesComponent } from './pages/images/images.component';
-import { RouterModule } from '@angular/router';
 import { ImageService } from './services/image.service';
 import { AddimageComponent } from './components/addimage/addimage.component';
 import { HostsComponent } from './pages/hosts/hosts.component';
-
-
-const appRoutes = [
-  { path: 'images', component: ImagesComponent}
-]
 
 @NgModule({
   declarations: [
@@ -32,7 +26,6 @@ const appRoutes = [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FontAwesomeModule
   ],
