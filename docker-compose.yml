@@ -1,0 +1,5 @@
+services:
+  dashboard:
+    build: ./dashboard
+    ports:
+      - 4200:80

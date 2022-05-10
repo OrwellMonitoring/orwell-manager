@@ -13,6 +13,7 @@ import { ImagesComponent } from './pages/images/images.component';
 import { ImageService } from './services/image.service';
 import { AddimageComponent } from './components/addimage/addimage.component';
 import { HostsComponent } from './pages/hosts/hosts.component';
+import { CollectorsComponent } from './pages/collectors/collectors.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HostsComponent } from './pages/hosts/hosts.component';
     SidenavComponent,
     ImagesComponent,
     AddimageComponent,
-    HostsComponent
+    HostsComponent,
+    CollectorsComponent
   ],
   imports: [
     BrowserModule,

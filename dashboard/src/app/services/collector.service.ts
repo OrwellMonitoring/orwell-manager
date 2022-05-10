@@ -1,17 +1,22 @@
-import { Collector } from './../models/collector';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Collector } from '../models/collector';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollectorService {
+  path = "/collectors"
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAll () {
-    return this.httpClient.get<Collector[]>(environment.api_url + '/collectors')
+  getHosts(): Observable<Collector[]> {
+    return this.http.get<Collector[]>(environment.api_url + this.path)
   }
 
+  getAll () {
+    return getHosts()
+  }
 }
