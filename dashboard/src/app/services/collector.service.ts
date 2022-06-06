@@ -15,4 +15,8 @@ export class CollectorService {
   getHosts(): Observable<Collector[]> {
     return this.http.get<Collector[]>(environment.api_url + this.path)
   }
+
+  getAll () {
+    return getHosts()
+  }
 }

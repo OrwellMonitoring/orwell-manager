@@ -19,4 +19,12 @@ export class ImageService {
   deleteImage(id: number) {
     return this.http.delete(environment.api_url + this.path + "/" + id);
   }
+
+  createImage(name: string) {
+    return this.http.post<Image>(environment.api_url + this.path, { name });
+  }
+
+  addCollector (id: number, collectorId: number) {
+    return this.http.post<Image>(environment.api_url + this.path + '/collector', { image_id: id, collector_id: collectorId })
+  }
 }
